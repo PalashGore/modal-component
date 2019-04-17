@@ -7,8 +7,8 @@ class ModalComponent extends React.Component {
 
         return (
             <div>                
-                <Modal isOpen={this.props.modal} toggle={this.props.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.props.toggle}>Modal title</ModalHeader>
+                <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className} centered={this.props.centered}>
+                    <ModalHeader toggle={this.props.toggle}>{this.props.title}</ModalHeader>
                     <ModalBody>
                          {this.props.modalBody}
                     </ModalBody>

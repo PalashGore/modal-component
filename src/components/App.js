@@ -13,8 +13,9 @@ class App extends Component {
     this.state = { 
       modal: false,
       title: 'Modal Title',
-      className: 'show',
-      modalBody: 'Modal Body'
+      className: 'modal',
+      modalBody: 'Modal Body',
+      centered: true
     };
 
     this.toggle = this.toggle.bind(this);
@@ -22,16 +23,12 @@ class App extends Component {
   }
 
   toggle() {
-    const show = this.state.modal;
-    console.log(show); 
-    if(show === false) {
-      this.setState({ modal: true });
-    }
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
   }
 
   render() {
-
-    console.log(this.state.modal);
 
     return (
       <div className="App">
@@ -45,6 +42,7 @@ class App extends Component {
                 title={this.state.title}
                 classNames={this.state.classNames}
                 modalBody={this.state.modalBody}
+                centered={this.state.centered}
               />     
             </Jumbotron>
           </header>
